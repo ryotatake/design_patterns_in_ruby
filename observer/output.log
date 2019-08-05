@@ -1,0 +1,17 @@
+hogehogehoge
+fugafuga\nhoge
+aaa
+aag
+fadjkfa
+gogogo
+wiwiwi
+key = Keyboard.newkey.add_observer(TextOutput.new)key.add_observer(LogOutput.new)key.input
+aaa
+add
+bbb
+key = Keyboard.newkey.add_observer(TextOutput.new)key.add_observer(LogOutput.new)key.input
+gogog
+aaa
+key = Keyboard.newkey.add_observer(TextOutput.new)key.add_observer(LogOutput.new)key.input
+gogogo
+wiwiwi
