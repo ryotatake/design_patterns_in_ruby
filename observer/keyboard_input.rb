@@ -29,11 +29,15 @@ class Keyboard
   end
 
   def input
+    old_content = @content
+
     while line = gets
       @content << line
     end
 
-    notify_observers
+    if old_content != @content
+      notify_observers
+    end
   end
 end
 
