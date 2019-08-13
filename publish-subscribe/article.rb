@@ -9,8 +9,6 @@ class Publisher
 end
 
 class ContentServer
-  attr_accessor :subscriber_lists
-
   def self.get_instance
     @@server_instance ||= ContentServer.new
   end
@@ -20,7 +18,7 @@ class ContentServer
   end
 
   def send_message(topic, message)
-    subscribers = subscriber_lists[topic] || []
+    subscribers = @subscriber_lists[topic] || []
 
     subscribers.each do |subscriber|
       subscriber.received_message(topic, message)
@@ -28,8 +26,8 @@ class ContentServer
   end
 
   def register_subscriber(subscriber, topic)
-    subscriber_lists[topic] ||= []
-    subscriber_lists[topic] << subscriber
+    @subscriber_lists[topic] ||= []
+    @subscriber_lists[topic] << subscriber
   end
 end
 
