@@ -33,6 +33,10 @@ end
 
 class Subscriber
   def initialize(*topics)
+    subscribe(*topics)
+  end
+
+  def subscribe(*topics)
     topics.each do |topic|
       ContentServer.get_instance.register_subscriber(self, topic)
     end
@@ -43,11 +47,14 @@ class Subscriber
   end
 end
 
-qiita = Publisher.new(:qiita)
-sankei = Publisher.new(:sankei)
-yomiuri = Publisher.new(:yomiuri)
-takeuchi = Subscriber.new(:qiita, :sankei)
+qiita    = Publisher.new(:qiita)
+sankei   = Publisher.new(:sankei)
+yomiuri  = Publisher.new(:yomiuri)
 
-qiita.publish("Qiita")
-sankei.publish("sankei")
-yomiuri.publish("yomiuri")
+takeuchi = Subscriber.new(:qiita, :sankei)
+kato     = Subscriber.new
+kato.subscribe(:qiita, :yomiuri)
+
+qiita.publish("Qiita published!")
+sankei.publish("sankei published!")
+yomiuri.publish("yomiuri published!")
