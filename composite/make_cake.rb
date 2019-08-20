@@ -11,7 +11,7 @@ class Task
     0.0
   end
 
-  def total_number_basic_task
+  def total_number_basic_tasks
     1
   end
 
@@ -78,7 +78,7 @@ class CompositeTask < Task
   end
 
   def total_number_basic_tasks
-    @sub_tasks.inject(0) {|total, task| total += task.total_number_basic_task}
+    @sub_tasks.inject(0) {|total, task| total += task.total_number_basic_tasks}
   end
 end
 
