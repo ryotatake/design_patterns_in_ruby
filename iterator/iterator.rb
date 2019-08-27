@@ -37,3 +37,15 @@ while fruit = fruits.pop
 end
 
 p _fruits
+
+# good pattern 3
+puts "========= good pattern 3 ========="
+
+fruits = ['apple', 'banana', 'grape', 'orange']
+
+fruits.delete_if do |fruit|
+  puts fruit
+  fruit == 'banana'
+end
+
+p fruits
