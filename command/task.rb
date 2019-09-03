@@ -48,6 +48,7 @@ class MacroCommand  < Command
 
   def clear
     @commands.reverse_each(&:unexecute)
+    @commands = []
   end
 end
 
