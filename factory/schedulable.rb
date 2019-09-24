@@ -34,9 +34,14 @@ class Factory
   end
 
   def output_schedulables
+    puts "=" * 20
+    puts @schedulables.first.class
+
     @schedulables.each do |schedulable|
       puts "タイトル: #{schedulable.title}"
     end
+
+    puts "=" * 20
   end
 end
 
