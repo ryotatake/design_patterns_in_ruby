@@ -1,20 +1,20 @@
 class BeefCurry
   attr_accessor :beef, :roux, :water
 
-  def initialize
-    @beef = 0
-    @roux = 0
-    @water = 0
+  def initialize(beef = 0, roux = 0, water = 0)
+    @beef = beef
+    @roux = roux
+    @water = water
   end
 end
 
 class PorkCurry
   attr_accessor :pork, :roux, :water
 
-  def initialize
-    @pork = 0
-    @roux = 0
-    @water = 0
+  def initialize(beef = 0, roux = 0, water = 0)
+    @pork = beef
+    @roux = roux
+    @water = water
   end
 end
 
@@ -62,3 +62,7 @@ end
 director = Director.new
 director.constract(BeefCurryBuilder.new)
 director.constract(PorkCurryBuilder.new)
+
+# builderを使わない場合。複雑にならないので、builderを使う必要ない。
+beef_curry = BeefCurry.new(400, 1200, 140)
+pork_curry = PorkCurry.new(400, 1200, 140)

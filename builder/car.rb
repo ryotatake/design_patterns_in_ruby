@@ -67,7 +67,7 @@ class CarBuilder
   end
 end
 
-class SportCarDirector
+class SportsCarDirector
   def constract(builder)
     builder.body_size = :small
     builder.wheel_type = :sport
@@ -75,5 +75,8 @@ class SportCarDirector
   end
 end
 
-SportCarDirector.new.constract(CarBuilder.new)
-SportCarDirector.new.constract(CarBuilder.new)
+SportsCarDirector.new.constract(CarBuilder.new)
+SportsCarDirector.new.constract(CarBuilder.new)
+
+# builderを使わない場合。newだけでは少し複雑で分かりにくい。
+p sports_car = Car.new(Body.new(:small), Wheel.new(:sport), Engine.new)
